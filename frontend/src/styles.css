@@ -1,0 +1,214 @@
+/* Shared minimal styling for the SSO demo.
+   The same sheet is used by the Jobs App, with a different accent, so the
+   two applications look like one product with two faces. */
+
+:root {
+  color-scheme: light dark;
+
+  --bg: #f2f4f5;
+  --surface: #ffffff;
+  --ink: #14212a;
+  --ink-soft: #55686f;
+  --line: #d9e0e2;
+  --accent: #c3002f; /* Angular red */
+  --accent-ink: #ffffff;
+  --pill: #eef1f2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1619;
+    --surface: #16232a;
+    --ink: #dfe8ea;
+    --ink-soft: #9aabb1;
+    --line: #26383f;
+    --accent: #ff5c78;
+    --accent-ink: #14212a;
+    --pill: #1f2f36;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 4rem;
+}
+
+.head {
+  margin-bottom: 2rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+h1 {
+  margin: 0.55rem 0 0.15rem;
+  font-size: 1.9rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+}
+
+.sub {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  margin: 0.85rem 0 0.15rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.card > .label:first-child {
+  margin-top: 0;
+}
+
+.name {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+code,
+.sub-id {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.78rem;
+  background: var(--pill);
+  padding: 3px 7px;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+  display: inline-block;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 0.9rem;
+  padding: 0.5rem 1.15rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  filter: brightness(0.92);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.list {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.skill-name {
+  font-weight: 600;
+}
+
+.pill {
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--pill);
+  padding: 2px 8px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+
+.error {
+  margin-top: 0.8rem;
+  color: #b3261e;
+  font-size: 0.9rem;
+}
+
+.link {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.foot {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 2px;
+}
+
+.foot a,
+.link {
+  text-decoration: none;
+}
+
+.foot a:hover,
+.link:hover {
+  text-decoration: underline;
+}

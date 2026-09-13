@@ -1,0 +1,11 @@
+{
+  "name": "skillbridge-skills",
+  "private": true,
+  "description": "Skills App — Express BFF + Angular, single origin",
+  "scripts": {
+    "build": "npm --prefix frontend ci && npm --prefix frontend run build && npm --prefix backend ci",
+    "start": "node backend/src/server.js",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend start"
+  }
+}

@@ -1,0 +1,42 @@
+<main class="page">
+  <header class="head">
+    <span class="badge badge--angular">Angular</span>
+    <h1>Skills App</h1>
+    <p class="sub">Skill graph and learning path</p>
+  </header>
+
+  @if (loading()) {
+    <p class="muted">Loading…</p>
+  } @else if (!user()) {
+    <section class="card">
+      <p>You are not signed in.</p>
+      <a class="button" href="/auth/login">Sign in</a>
+    </section>
+  } @else {
+    <section class="card">
+      <p class="label">Signed in as</p>
+      <p class="name">{{ user()!.name }}</p>
+      <p class="label">Subject id — the key shared with the other application</p>
+      <code class="sub-id">{{ user()!.sub }}</code>
+    </section>
+
+    <section class="card">
+      <h2>My skills</h2>
+      <p class="label">Stored in this application's own database</p>
+      <ul class="list">
+        @for (skill of skills(); track skill.id) {
+          <li>
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="pill">{{ skill.level }}</span>
+          </li>
+        }
+      </ul>
+    </section>
+
+    <a class="link" href="/auth/logout">Sign out</a>
+  }
+
+  <footer class="foot">
+    <a [href]="user()?.jobsAppUrl ?? '#'">Open Jobs App →</a>
+  </footer>
+</main>
